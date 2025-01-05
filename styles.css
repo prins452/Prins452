@@ -1,0 +1,1352 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #FFFFFF;
+}
+
+.box {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Form Styles */
+.form {
+    background: #FFFFFF;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.inputbox {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.inputbox input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.inputbox span {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    color: #AAAAAA;
+    font-size: 16px;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.inputbox input:focus + span,
+.inputbox input:not(:focus):valid + span {
+    top: 0;
+    font-size: 12px;
+    color: #333333;
+}
+
+.sub {
+    width: 100%;
+    padding: 10px;
+    background-color: #3e4a59;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.sub:hover {
+    background-color: #D35400;
+}
+
+/* Links */
+a {
+    color: #3e4a59;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+/* Menu Bar */
+.menu-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #4F4B4B; /* Dark background for the menu */
+  padding: 0px 20px;
+  position: fixed; /* Fixed to the top of the screen */
+  top: 0;
+  left: 0;
+  width: 100%; /* Full width */
+ 
+}
+
+/* Menu Icon */
+.menu-icon {
+  font-size: 30px; /* Increased size of the icon */
+  color: white; /* White color for the icon */
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.menu-icon:hover {
+  color: #f1f1f1; /* Light color on hover */
+}
+/* Wallet Info */
+.wallet-info {
+  position: absolute;
+  top: 10px;
+  right: 50px;
+  text-align: right;
+  color: white; /* White color for the wallet info */
+  font-size: 20px; /* Increased size for better visibility */
+}
+
+.wallet-amount {
+  font-weight: bold;
+  font-size: 16px; /* Bigger font size for the wallet amount */
+  color: #FFFFFF; /* Green color for the wallet balance */
+}
+/* Active Menu (Side Menu) */
+#sideMenu {
+  position: fixed;
+  top: 0;
+  left: -250px; /* Initially hidden */
+  width: 250px;
+  height: 100%;
+  background-color: #333;
+  color: white;
+  transition: 0.3s;
+  padding-top: 60px;
+  z-index: 9999;
+}
+
+#sideMenu.active {
+  left: 0; /* Show the menu */
+}
+
+#sideMenu a {
+  display: block;
+  padding: 15px;
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  transition: 0.3s;
+}
+
+#sideMenu a:hover {
+  background-color: #575757;
+}
+
+#menuToggleBtn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 10px;
+  font-size: 18px;
+  cursor: pointer;
+  z-index: 10000;
+}
+
+#menuToggleBtn:hover {
+  background-color: #575757;
+}
+/* Action Buttons (Position at the Top, Centered Horizontally) */
+.action-buttons {
+  position: fixed; /* Fixed position relative to the viewport */
+  top: 60px; /* Distance from the top of the screen */
+  left: 50%; /* Position horizontally at 50% of the screen width */
+  transform: translateX(-50%); /* Center the container horizontally */
+  display: flex;
+  justify-content: center;
+  gap: 4px; /* Space between buttons */
+  background-color: #FFFFFF; /* Background color */
+  border-radius: 0px; /* Optional: rounded corners */
+  box-shadow: 0px 0px 0px #00FF2B; /* Shadow effect */
+  padding: 0 7px; /* Padding for horizontal spacing */
+  height: 40px; /* Fixed height same as button height */
+  align-items: center; /* Align buttons vertically */
+  z-index: 1; /* Lower z-index so overlay pages appear above */
+}
+
+/* Buttons Inside the Background */
+.action-btn {
+  height: 100%; /* Match the button height to the background height */
+  padding: 0 20px; /* Horizontal padding only */
+  font-size: 11px; /* Font size */
+  text-align: center; /* Center align text */
+  cursor: pointer;
+  background-color: #000000; /* Button color */
+  color: white; /* Text color */
+  border: none; /* No border */
+  border-radius: 20px; /* Optional: rounded corners for buttons */
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.action-btn:hover {
+  background-color: #45A049;
+  transform: scale(1.1); /* Scale effect on hover */
+}
+
+/* Overlay Page (Example) */
+.overlay-page {
+  position: fixed; /* Fixed to the viewport */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8); /* Semi-transparent black */
+  color: white;
+  z-index: 2; /* Higher z-index to appear above the action buttons */
+  display: none; /* Initially hidden */
+  justify-content: center;
+  align-items: center;
+}
+
+/* Show the overlay page */
+.overlay-page.show {
+  display: flex; /* Display flex to center content */
+}
+/* Withdrawal Button Styling */
+#withdrawalBtn {
+  background-color: #fbc02d; /* Yellow color */
+}
+
+#withdrawalBtn:hover {
+  background-color: #f57f17; /* Darker yellow on hover */
+}
+/* Transaction Button Styling */
+#transactionBtn {
+  background-color: #d32f2f; /* Red color */
+}
+
+#transactionBtn:hover {
+  background-color: #c62828; /* Darker red on hover */
+}
+
+/* Transaction Page Styles */
+#transactionPage {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #f3f4f6; /* हल्का ग्रे बैकग्राउंड */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Page Header */
+#transactionPage h2 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #000000; /* गहरा ग्रे टेक्स्ट */
+  margin-top: 0px;
+  text-align: center;
+}
+
+/* Transaction List */
+#transactionPage ul#transactionList {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 0px;
+  width: 100%;
+  max-height: 100%;
+  overflow-y: auto;
+  border: 1px solid #FFFFFF;
+  border-radius: 8px;
+  background-color: #FFFFFF; /* सफेद बैकग्राउंड */
+  box-shadow: 0 0px 0px rgba(0, 0, 0, 0.1);
+}
+
+/* Transaction List Items */
+#transactionPage ul#transactionList li {
+  padding: 10px;
+  border-bottom: 2px solid #BB0000;
+  font-size: 16px;
+  color: #555; /* मीडियम ग्रे */
+}
+
+#transactionPage ul#transactionList li:last-child {
+  border-bottom: none;
+}
+
+/* Close Button */
+#transactionPage button {
+  margin-top: auto;
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #4CAF50; /* हरा रंग */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#transactionPage button:hover {
+  background-color: #45a049; /* हल्का हरा */
+}
+
+/* Withdrawal Page Styling */
+#withdrawalPage {
+  position: fixed; /* Fixed position on screen */
+  top: 0;
+  left: 0;
+  width: 100%; /* Full width */
+  height: 100vh; /* Full height of the screen */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to bottom right, #BD46B5, #2164E4); /* Gradient Background */
+  padding: 20px;
+  box-sizing: border-box;
+  overflow: hidden; /* Prevents scrolling */
+}
+/* Form Header */
+#withdrawalPage h2 {
+  font-size: 28px;
+  color: white;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: bold;
+  position: absolute;
+  top: 20px;
+  width: 100%;
+  text-transform: uppercase;
+}
+
+/* Container for Form and Inputs */
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 400px; /* Limit width */
+  background-color: rgba(255, 255, 255, 0.85); /* Semi-transparent background */
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Soft shadow */
+  margin-top: 80px;
+}
+
+/* Input Box Styling */
+.inputbox {
+  position: relative;
+  margin: 15px 0;
+  width: 100%;
+}
+
+.inputbox input {
+  width: 100%;
+  padding: 14px;
+  font-size: 16px;
+  border: 2px solid #00796B;
+  border-radius: 5px;
+  margin-top: 10px;
+  box-sizing: border-box;
+  background-color: #e0f2f1; /* Soft teal background for inputs */
+  color: #004d40;
+  transition: all 0.3s ease; /* Smooth transition for hover/focus */
+}
+
+/* Hover and Focus Effects for Input */
+.inputbox input:focus,
+.inputbox input:hover {
+  border-color: #004d40; /* Darker green on hover/focus */
+  background-color: #ffffff; /* Lighter background on focus */
+  box-shadow: 0 0 10px rgba(0, 77, 64, 0.5); /* Soft shadow on focus */
+}
+
+/* Placeholder text inside input */
+.inputbox input::placeholder {
+  color: #004d40; /* Placeholder text color */
+  font-weight: bold;
+}
+/* Position Action Buttons 40px from the bottom */
+#withdrawalPage .action-buttons {
+  position: absolute;
+  bottom: 40px;
+  width: 100%;
+  text-align: center;
+  max-width: 400px;
+}
+
+/* Button Styling for 'Withdraw' and 'Close' */
+#withdrawalPage .action-buttons button {
+  width: 48%; /* Slightly less than full width to create space between buttons */
+  margin: 5px;
+}
+
+/* 'Withdraw' button */
+button[type="button"]:nth-child(1) {
+  background-color: #00796b;
+  transition: background-color 0.3s ease;
+}
+
+/* 'Close' button */
+button[type="button"]:nth-child(2) {
+  background-color: #d32f2f; /* Red background for close button */
+  transition: background-color 0.3s ease;
+}
+
+button[type="button"]:nth-child(1):hover {
+  background-color: #004d40;
+}
+
+button[type="button"]:nth-child(2):hover {
+  background-color: #b71c1c; /* Darker red for close button on hover */
+}
+
+/* Add Money Page Styling */
+#addMoneyPage {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(to bottom right, #263CFF, #FF0000); /* Vibrant Red Gradient */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+  color: white;
+  font-family: Arial, sans-serif; /* Elegant font */
+}
+
+/* Select Amount Text Styling */
+#addMoneyPage .select-amount-text {
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); /* Text shadow for depth */
+}
+
+/* Button Container Styling (500, 1000, 2000 Buttons) */
+#addMoneyPage .amount-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0px;
+  margin-bottom: 50px;
+}
+
+/* Individual Button Styling */
+#addMoneyPage .amount-buttons button {
+  padding: 16px 32px;
+  font-size: 18px;
+  background-color: #36C3EF; /* Purple background */
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover Effect for Buttons */
+#addMoneyPage .amount-buttons button:hover {
+  background-color: #D9FF00; /* Lighter purple on hover */
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Additional CSS for layout (like form) */
+#addMoneyPage .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Larger shadow for depth */
+  margin-top: 40px;
+}
+
+/* Action Buttons (Submit and Close) at the Bottom */
+#addMoneyPage .action-buttons {
+  position: absolute;
+  bottom: 40px;
+  width: 100%;
+  text-align: center;
+  max-width: 400px;
+}
+
+/* Button Styling for Submit and Close */
+#addMoneyPage .action-buttons button {
+  width: 48%;
+  margin: 10px;
+  padding: 12px;
+  font-size: 18px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+/* 'Submit' button */
+#addMoneyPage .action-buttons button[type="button"]:nth-child(1) {
+  background-color: #1C00FF; /* Green for Submit */
+  color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+/* 'Close' button */
+#addMoneyPage .action-buttons button[type="button"]:nth-child(2) {
+  background-color: #23FF73; /* Red for Close */
+  color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Hover effect for Submit button */
+#addMoneyPage .action-buttons button[type="button"]:nth-child(1):hover {
+  background-color: #2c6b2f;
+  transform: scale(1.05);
+}
+
+/* Hover effect for Close button */
+#addMoneyPage .action-buttons button[type="button"]:nth-child(2):hover {
+  background-color: #d32f2f;
+  transform: scale(1.05);
+}
+/* Toggle Menu Styles */
+#sideMenu {
+  position: fixed;
+  top: 0;
+  right: -280px; /* Initially hidden off-screen */
+  width: 250px;
+  height: 100vh;
+  background: linear-gradient(to bottom, #000000, #203E27);
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+  transition: right 0.3s ease;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  box-sizing: border-box;
+}
+
+/* Menu Active State */
+#sideMenu.active {
+  right: 0; /* Slide in */
+}
+
+/* Close Button */
+#sideMenu .close-btn {
+  align-self: flex-end;
+  margin: 18px;
+  background: #163949;
+  color: white;
+  border: none;
+  padding: 9px 100px;
+  border-radius: 5%;
+  cursor: pointer;
+  font-size: 19px;
+  transition: background 0.3s ease;
+}
+
+#sideMenu .close-btn:hover {
+  background: #861919;
+}
+
+/* Menu Icons */
+#sideMenu .menu-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin: 20px 0;
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+#sideMenu .menu-item:hover {
+  transform: scale(1.1);
+}
+
+/* Icon Styles */
+#sideMenu .menu-item i {
+  font-size: 24px;
+}
+/* Popup Overlay */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1001;
+}
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  max-width: 400px;
+  width: 90%;
+}
+
+.popup-content h2 {
+  margin-bottom: 20px;
+}
+
+.popup-content p {
+  margin: 10px 0;
+}
+
+.close-btn {
+  background: #FF5E57;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.close-btn:hover {
+  background: #e14e48;
+}
+
+/* Fullscreen Page Styling */
+.fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000000; /* Dark background */
+  color: white; /* White text */
+  display: none; /* Hidden by default */
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.content {
+  text-align: center;
+}
+
+button {
+  margin: 10px;
+  padding: 8px 80px;
+  background-color: #FF9F07; /* Orange color for buttons */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #e64a19; /* Darker orange */
+}
+/* Telegram Icon Styling */
+.telegram-link {
+  display: inline-block;
+  margin-top: 20px;
+}
+
+.telegram-icon {
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+
+/* Common Styles for All Containers */
+.new-containers .container {
+    width: 101%; /* Container width (remains the same as your previous setup) */
+    padding: 0px; /* Add padding inside the containers */
+    border: 1px solid #ccc; /* Border remains same */
+    text-align: center; /* Align content centrally */
+    margin: 10px 0; /* Margin for spacing between containers */
+    box-sizing: border-box; /* Ensures padding and border are included in width */
+    border-radius: 10px; /* Rounded corners */
+    background-color: #f4f4f4; /* Light grey background */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease, border-left-color 0.3s ease;
+}
+
+/* Individual Styles for Each Container */
+
+/* Container 1 */
+.new-containers #container1 {
+    background-color: #E3F2FD; /* Light blue background */
+    border-left: 5px solid #2196F3; /* Blue left border */
+    margin-top: 110px; /* Position container 1 90px below the top */
+}
+
+/* Container 2 */
+.new-containers #container2 {
+    background-color: #fff3e0; /* Light orange background */
+    border-left: 5px solid #FF9800; /* Orange left border */
+}
+
+/* Container 3 */
+.new-containers #container3 {
+    background-color: #e8f5e9; /* Light green background */
+    border-left: 5px solid #4CAF50; /* Green left border */
+}
+
+/* Container 4 */
+.new-containers #container4 {
+    background-color: #fce4ec; /* Light pink background */
+    border-left: 5px solid #E91E63; /* Pink left border */
+}
+
+/* Container 5 */
+.new-containers #container5 {
+    background-color: #ede7f6; /* Light purple background */
+    border-left: 5px solid #9C27B0; /* Purple left border */
+}
+
+/* Container 6 */
+.new-containers #container6 {
+    background-color: #fffde7; /* Light yellow background */
+    border-left: 5px solid #FFEB3B; /* Yellow left border */
+}
+
+/* Container 7 */
+.new-containers #container7 {
+    background-color: #f3e5f5; /* Lavender background */
+    border-left: 5px solid #673AB7; /* Indigo left border */
+}
+
+/* Container 8 */
+.new-containers #container8 {
+    background-color: #e0f7fa; /* Cyan background */
+    border-left: 5px solid #00BCD4; /* Cyan left border */
+}
+
+/* Container 9 */
+.new-containers #container9 {
+    background-color: #e0f2f1; /* Teal background */
+    border-left: 5px solid #009688; /* Teal left border */
+}
+
+/* Container 10 */
+.new-containers #container10 {
+    background-color: #edeff0; /* Neutral background */
+    border-left: 5px solid #607D8B; /* Blue-grey left border */
+}
+
+/* Container 11 */
+.new-containers #container11 {
+    background-color: #ffebee; /* Light red background */
+    border-left: 5px solid #F44336; /* Red left border */
+}
+
+/* Container 12 */
+.new-containers #container12 {
+    background-color: #f9fbe7; /* Light lime background */
+    border-left: 5px solid #CDDC39; /* Lime left border */
+}
+
+/* Container 13 */
+.new-containers #container13 {
+    background-color: #fff8e1; /* Amber background */
+    border-left: 5px solid #FFC107; /* Amber left border */
+}
+
+/* Container 14 */
+.new-containers #container14 {
+    background-color: #e8f8f5; /* Aqua background */
+    border-left: 5px solid #1ABC9C; /* Aqua left border */
+}
+
+/* Container 15 */
+.new-containers #container15 {
+    background-color: #fbf3f3; /* Pale rose background */
+    border-left: 5px solid #D63031; /* Rose red left border */
+    margin-bottom: 60px; /* Additional space for the last container */
+}
+
+/* Heading and Paragraph Styles (Same for All) */
+.new-containers .container h3 {
+    font-size: 1.5rem; /* Larger font size for headings */
+    color: #333; /* Dark text color */
+    margin-bottom: 10px; /* Space below heading */
+}
+
+.new-containers .container p {
+    font-size: 1rem; /* Set font size for content */
+    color: #555555; /* Slightly lighter text color */
+    line-height: 1.6; /* Line height for readability */
+}
+
+/* Locked Time Span Style */
+.new-containers .container span {
+    font-weight: bold; /* Make the time bold */
+    color: #d32f2f; /* Red color for the locked time */
+}
+
+/* Active State (On Click) */
+.new-containers .container.active {
+    background-color: #c8e6c9; /* Light green background */
+    border-left-color: #388E3C; /* Dark green left border */
+    color: white;
+}
+/* फुलस्क्रीन पेज */
+.fullscreen-page {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  transition: opacity 0.3s ease;
+}
+
+.fullscreen-page.hidden {
+  display: none;
+  opacity: 0;
+}
+
+.fullscreen-page.visible {
+  display: flex;
+  opacity: 1;
+}
+
+/* Wallet and Header Container */
+.wallet-header-container {
+  position: fixed;            /* इसे स्क्रीन के टॉप पर फिक्स करें */
+  top: 0;                     /* स्क्रीन के बिल्कुल टॉप पर रखें */
+  left: 0;                    /* बाएं से 0 पॉइज़न करें */
+  width: 100%;                /* पूरी चौड़ाई में फैलाएं */
+  text-align: center;         /* सेंटर में रखें */
+  margin-top: 0;              /* टॉप मार्जिन को 0 रखें */
+}
+
+/* वॉलेट डिस्प्ले */
+.wallet-display {
+  background-color: black;    /* वॉलेट का बैकग्राउंड काला */
+  color: white;               /* वॉलेट टेक्स्ट सफेद */
+  padding: 1px;              /* वॉलेट के चारों ओर पैडिंग */
+}
+
+/* हेडर कंटेनर */
+.header-container {
+  background-color: #F9F9F9; /* हल्का बैकग्राउंड */
+  padding: 0px;              /* हेडर के चारों ओर पैडिंग */
+  font-size: 12px;            /* हेडर का फॉन्ट साइज */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* हल्की शैडो */
+  margin-top: 5px;            /* वॉलेट और हेडर के बीच 0px का अंतर */
+}
+/* Play Buttons Container */
+.play-buttons {
+  display: flex;             /* Flexbox का उपयोग करें */
+  flex-wrap: wrap;           /* बटन को अगले लाइन में डालने के लिए */
+  justify-content: center;   /* बटन को सेंटर में सेट करें */
+  gap: 0px;                 /* बटन के बीच में गैप (0px) */
+  position: fixed;           /* पोजीशन को फिक्स्ड रखें */
+  top: 100px;                /* स्क्रीन के टॉप से 110px नीचे सेट करें */
+  left: 50%;                 /* बटन को स्क्रीन के बीच में सेट करने के लिए */
+  transform: translateX(-50%); /* बटन को बीच में लाने के लिए */
+  z-index: 100;              /* बटन को अन्य कंटेंट से ऊपर रखें */
+  width: 300px;              /* बटन कंटेनर की चौड़ाई */
+  
+}
+
+/* Button Style */
+.play-buttons button {
+  padding: 10px 25px;         /* बटन के चारों ओर पैडिंग */
+  color: white;               /* बटन का टेक्स्ट रंग */
+  border: none;               /* बटन की बॉर्डर को हटाएं */
+  border-radius: 5px;         /* बटन के कोनों को गोल करें */
+  cursor: pointer;            /* बटन पर माउस पॉइंटर */
+  width: 120px;                /* बटन की चौड़ाई */
+}
+
+/* Button 1 और Button 2 को Red Color */
+.play-buttons button:nth-child(1),
+.play-buttons button:nth-child(2) {
+  background-color: red;     /* Red Color for Button 1 and 2 */
+}
+
+.play-buttons button:nth-child(1):hover,
+.play-buttons button:nth-child(2):hover {
+  background-color: darkred; /* Hover effect for red buttons */
+}
+
+/* Button 3 और Button 4 को Red Color */
+.play-buttons button:nth-child(3),
+.play-buttons button:nth-child(4) {
+  background-color: red;     /* Red Color for Button 3 and 4 */
+}
+
+.play-buttons button:nth-child(3):hover,
+.play-buttons button:nth-child(4):hover {
+  background-color: darkred; /* Hover effect for red buttons */
+}
+
+/* Go Back Button को Black Color */
+.play-buttons .go-back-button {
+  background-color: black;
+}
+
+.play-buttons .go-back-button:hover {
+  background-color: #333; /* Darker black shade for hover */
+}
+
+/* Bet Button को Yellow Color */
+.play-buttons .bet-button {
+  background-color: yellow;
+  color: black; /* Text color for contrast */
+}
+
+.play-buttons .bet-button:hover {
+  background-color: gold; /* Darker yellow on hover */
+}
+/* कंटेनर एरिया */
+#containerArea {
+  position: fixed; /* स्क्रीन पर फिक्स स्थिति में रखें */
+  top: 250px; /* स्क्रीन के टॉप से 200px नीचे */
+  bottom: 30px; /* स्क्रीन के बॉटम से 30px ऊपर */
+  left: 0; /* स्क्रीन के लेफ्ट से शुरू करें */
+  right: 0; /* स्क्रीन के राइट तक जाएं */
+  overflow-y: auto; /* स्क्रॉल की अनुमति दें अगर कंटेंट अधिक हो */
+  padding: 10px;
+  border: 1px solid #CCCCCC;
+  background-color: #fff; /* सफेद बैकग्राउंड */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* हल्की शैडो */
+  z-index: 10; /* अन्य एलिमेंट्स के ऊपर दिखाएं */
+}
+
+/* कंटेनर स्टाइल */
+#containers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.container {
+  width: 48%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: center;
+  box-sizing: border-box;
+  margin: 5px 0;
+}
+
+.container .container-number {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.container input[type="number"] {
+  width: 60%;
+  padding: 5px;
+  margin: 5px 0;
+}
+
+.container button {
+  padding: 5px 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.container button:hover {
+  background-color: #45A049;
+}
+.popup {
+  display: none; /* Initially hidden */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #4caf50;
+  color: white;
+  padding: 20px 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  font-size: 18px;
+  text-align: center;
+  z-index: 1000;
+}
+
+.popup.show {
+  display: block; /* Show the popup */
+}
+/* Full-Screen Bet Page */
+.bet-page {
+  display: none; /* Initially hidden */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #f5f5f5;
+  z-index: 1000;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 40px; /* Add space below the header */
+  overflow-y: auto; /* Scroll if the content is long */
+}
+
+/* Bet Page Header (Play Page header) */
+.bet-page h2 {
+  font-size: 2rem;
+  color: white;
+  background-color: red; /* Red background color for header */
+  margin: 0; /* No margin */
+  padding: 0px 0; /* Padding for better spacing */
+  text-align: center;
+  position: fixed; /* Fix the header to the top */
+  top: 0; /* Place at the top of the screen */
+  left: 0; /* Align it with the left side */
+  width: 100%; /* Make the header span the full width */
+  z-index: 1001; /* Ensure the header stays above other content */
+}
+
+/* Bet Page Sub-Heading */
+.bet-page h1 {
+  font-size: 1.5rem;
+  margin-bottom: 6px;
+  color: #333;
+  text-align: center;
+  padding-top: 0; /* Add padding to prevent overlap with fixed header */
+}
+
+/* Bet Page button styles */
+.bet-page button {
+  background-color: red;
+  color: white;
+  padding: 8px 60px;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 5px;
+  margin-bottom: 120px; /* Space between buttons */
+}
+
+.bet-page button:hover {
+  background-color: darkred;
+}
+/* Style for the Bet List Section */
+.bet-list {
+  width: 100%;
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #F0F0F0;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+  height: 200px; /* Fixed height for scrolling */
+}
+
+.bet-item {
+  padding: 10px;
+  margin: 5px 0;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+}
+
+.bet-item span {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+/* Bottom Navigation Bar */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly; /* Icons spaced evenly */
+  background-color: #ECECEC; /* White background */
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+  z-index: 1000;
+  padding: 0; /* Remove extra padding */
+  height: 60px; /* Fixed height for bottom nav */
+}
+
+/* Navigation Item */
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end; /* Push content to the bottom */
+  text-align: center;
+  color: #333333; /* Default text color */
+  font-size: 14px;
+  flex: 1; /* Make all items take equal space */
+}
+
+/* Icon Styling */
+.nav-item i {
+  font-size: 24px; /* Icon size */
+  margin: 10; /* Remove any margin */
+  padding: 0; /* Remove padding */
+}
+
+/* Margin Between Icon and Text */
+.nav-item p {
+  margin: 2px 0 0 0; /* Add 3px margin above text */
+  font-size: 12px; /* Set text size */
+  color: #555; /* Gray color for text */
+}
+
+/* Icon Colors for Each Item */
+.nav-item.profile i {
+  color: #FF0000; /* Green color for profile icon */
+}
+
+.nav-item.live i {
+  color: #FF9800; /* Orange color for live icon */
+}
+
+.nav-item.help i {
+  color: #2196F3; /* Blue color for help icon */
+}
+
+.nav-item.results i {
+  color: #F44336; /* Red color for results icon */
+}
+
+/* Live Number Styling */
+.nav-item .live-number {
+  font-size: 5px;
+  font-weight: bold;
+  color: #F44336; /* Red color for number */
+  margin-bottom: 3px; /* Small margin above icon */
+}
+/* Popup Styling */
+.popup {
+  display: none; /* Initially hidden */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  text-align: center;
+  z-index: 2000;
+}
+
+.popup-content {
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+/* Popup के लिए स्टाइल */
+.popup-message {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center the popup */
+  background-color: #28a745; /* Green background for success */
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: none;
+  z-index: 1000;
+}
+
+.popup-message.show {
+  display: block;
+  animation: fadeInOut 1s forwards;
+}
+
+/* Animation effect for fading in and out */
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) translateY(20px);
+  }
+  20%, 80% {
+    opacity: 1;
+    transform: translate(-50%, -50%) translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) translateY(20px);
+  }
+}
+/* Wrapper for the page */
+.page-container {
+  position: relative; /* Ensures the text is relative to this container */
+  z-index: 1; /* Keeps the content above other elements */
+}
+
+/* Moving Text Container */
+.moving-text-container {
+  position: fixed; /* Fixed so that it moves with the page */
+  top: 40px; /* 40px below the top of the page */
+  left: 0;
+  width: 100%; /* Full width for the container */
+  background-color: #FFFFFF; /* Background color */
+  padding: 4px; /* Padding for the container */
+  font-size: 10px; /* Font size for better visibility */
+  font-weight: bold; /* Bold text */
+  color: #000000; /* Text color */
+  text-align: center; /* Center align the text */
+  z-index: 999; /* Keeps it above the content */
+  overflow: hidden; /* Hide overflow */
+  border: 1px solid #000; /* Optional: Border for visibility */
+}
+
+/* Moving Text Animation */
+.moving-text-container span {
+  display: inline-block; /* Inline block for animation */
+  white-space: nowrap; /* Prevent text from wrapping */
+  animation: moveText 10s linear infinite; /* Continuous right-to-left animation */
+}
+
+/* Keyframes for Text Movement (From right to left) */
+@keyframes moveText {
+  0% {
+    transform: translateX(100%); /* Start from the right outside the screen */
+  }
+  100% {
+    transform: translateX(-100%); /* Move to the left outside the screen */
+  }
+}
+/* केवल Submit और Close बटन के लिए CSS */
+
+/* बटन कंटेनर */
+.custom-action-buttons {
+  position: fixed; /* फिक्स्ड पोजिशन */
+  bottom: 50px; /* स्क्रीन के बॉटम से 50px ऊपर */
+  left: 50%; /* स्क्रीन के सेंटर में */
+  transform: translateX(-50%); /* सही सेंटरिंग */
+  display: flex; /* बटन को एक लाइन में रखने के लिए */
+  gap: 10px; /* बटन के बीच का स्पेस */
+  z-index: 1000; /* अन्य एलिमेंट्स के ऊपर */
+}
+
+/* Submit बटन */
+#submitButton {
+  background-color: #4CAF50; /* हरा रंग */
+  color: white;
+  padding: 10px 20px;
+  font-size: 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Close बटन */
+#closeButton {
+  background-color: #f44336; /* लाल रंग */
+  color: white;
+  padding: 10px 20px;
+  font-size: 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Submit बटन पर Hover Effect */
+#submitButton:hover {
+  background-color: #45a049; /* हल्का हरा */
+  transform: scale(1.05); /* हल्का ज़ूम */
+}
+
+/* Close बटन पर Hover Effect */
+#closeButton:hover {
+  background-color: #d32f2f; /* गहरा लाल */
+  transform: scale(1.05); /* हल्का ज़ूम */
+}
+/* Styling specifically for Withdraw and Close buttons */
+.action-buttons-withdraw-close {
+  position: fixed; /* Fixed to the viewport */
+  bottom: 1
+  20px; /* 50px from the bottom */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Center align */
+  display: flex;
+  gap: 10px; /* Space between buttons */
+  z-index: 1000; /* Ensure it stays on top */
+}
+
+/* Individual Button Styling */
+.action-buttons-withdraw-close button {
+  padding: 12px 20px; /* Padding for buttons */
+  font-size: 16px; /* Font size */
+  color: #fff; /* Text color */
+  border: none; /* Remove border */
+  border-radius: 8px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s, transform 0.2s; /* Hover effects */
+}
+
+/* 'Withdraw' Button */
+.action-buttons-withdraw-close button:first-child {
+  background-color: #007BFF; /* Blue color */
+}
+
+/* 'Close' Button */
+.action-buttons-withdraw-close button:last-child {
+  background-color: #FF4136; /* Red color */
+}
+
+/* Hover Effect */
+.action-buttons-withdraw-close button:hover {
+  transform: scale(1.05); /* Slight zoom on hover */
+  opacity: 0.9; /* Slight transparency */
+}
